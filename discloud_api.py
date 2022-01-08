@@ -41,3 +41,17 @@ class BotRestart():
         self.ratelimit_reset = headers['x-ratelimit-reset']
         self.result = result['message']
         self.json = result
+
+
+class BotLogs():
+    def __init__(self, bot_id: str=None, api_token: str=None):
+        r = requests.get(f"https://discloud.app/status/bot/{bot_id}/logs", headers={"api-token":api_token})
+        result = r.json()
+        headers = r.headers
+        self.bot_id = result['bot_id']
+        self.link = result['link']
+        self.logs = result['logs']
+        self.ratelimit = headers['x-ratelimit-limit']
+        self.ratelimit_remaining = headers['x-ratelimit-remaining']
+        self.ratelimit_reset = headers['x-ratelimit-reset']
+        self.json = result
