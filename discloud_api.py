@@ -14,6 +14,7 @@ class BotStatus():
         self.ratelimit = headers['x-ratelimit-limit']
         self.ratelimit_remaining = headers['x-ratelimit-remaining']
         self.ratelimit_reset = headers['x-ratelimit-reset']
+        self.json = result
 
 class UserStatus():
     def __init__(self, api_token: str=None):
@@ -27,15 +28,16 @@ class UserStatus():
         self.ratelimit = headers['x-ratelimit-limit']
         self.ratelimit_remaining = headers['x-ratelimit-remaining']
         self.ratelimit_reset = headers['x-ratelimit-reset']
-"""
+        self.json = result
+        
 class BotRestart():
     def __init__(self, bot_id: str=None, api_token: str=None):
         r = requests.post(f"https://discloud.app/status/bot/{bot_id}/restart", headers={"api-token":api_token})
         result = r.json()
-        print(result)
         headers = r.headers
 
         self.ratelimit = headers['x-ratelimit-limit']
         self.ratelimit_remaining = headers['x-ratelimit-remaining']
         self.ratelimit_reset = headers['x-ratelimit-reset']
-"""
+        self.result = result['message']
+        self.json = result
