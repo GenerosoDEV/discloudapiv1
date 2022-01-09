@@ -1,7 +1,0 @@
-README.md
-setup.cfg
-setup.py
-discloud_api.egg-info/PKG-INFO
-discloud_api.egg-info/SOURCES.txt
-discloud_api.egg-info/dependency_links.txt
-discloud_api.egg-info/top_level.txt
