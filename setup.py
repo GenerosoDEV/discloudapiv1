@@ -5,7 +5,7 @@ with open('README.md', 'r') as fp:
     long_desc = fp.read()
 
 
-setup(name='discloud_api',
+setup(name='discloudapi',
       version='1.0.0',
       license='MIT',
       description='Módulo Python feito para acessar as rotas da discloudbot.com',
