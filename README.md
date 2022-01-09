@@ -1,7 +1,7 @@
 > ## Exemplos de uso
 
 ```{python}
-import discloud_api
+import discloudapi
 
 ### STATUS DE UM BOT
 resultado = discloud_api.BotStatus(bot_id=ID DO SEU BOT, api_token="SEU TOKEN DA DISCLOUD")
