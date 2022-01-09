@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: discloud-api
+Version: 1.0.0
+Summary: Módulo Python feito para acessar as rotas da discloudbot.com
+Home-page: https://github.com/GenerosoDEV/discloud_api
+Author: GenerosoDEV
+License: MIT
+Description: > ## Exemplos de uso
+        
+        ```{python}
+        import discloud_api
+        
+        ### STATUS DE UM BOT
+        resultado = discloud_api.BotStatus(bot_id=ID DO SEU BOT, api_token="SEU TOKEN DA DISCLOUD")
+        print(f"ID: {resultado.bot_id}\nUso de CPU: {resultado.cpu}\nUso de memÃ³ria: {resultado.memory}")
+        print(f"{resultado.ratelimit_remaining}/{resultado.ratelimit}")
+        
+        ### SEU STATUS
+        resultado = discloud_api.UserStatus(api_token="SEU TOKEN DA DISCLOUD")
+        print(f"Seu plano: {resultado.plan}\nAcaba em: {resultado.planDataEnd}")
+        print(f"{resultado.ratelimit_remaining}/{resultado.ratelimit}")
+        
+        ### REINICIAR BOT
+        resultado = discloud_api.BotRestart(bot_id=ID DO SEU BOT, api_token="SEU TOKEN DA DISCLOUD")
+        print(f"{resultado.result}")
+        print(f"{resultado.ratelimit_remaining}/{resultado.ratelimit}")
+        
+        ### ACESSAR AS LOGS
+        resultado = discloud_api.BotRestart(bot_id=ID DO SEU BOT, api_token="SEU TOKEN DA DISCLOUD")
+        print(f"Logs completas: {resultado.link}\nÃšltimos 1800 caracteres: {resultado.logs}")
+        print(f"{resultado.ratelimit_remaining}/{resultado.ratelimit}")
+        ```
+        
+Keywords: discloud
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: License :: OSI Approved :: Apache Software License
+Description-Content-Type: text/markdown
